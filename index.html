@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Qué Torta | Pastelería</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Qué Torta</h1>
+
+        <!-- NAVEGACIÓN -->
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#resenas">Reseñas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- INICIO -->
+        <section id="inicio">
+            <h2>Bienvenidos a Qué Torta</h2>
+
+            <p>
+                Somos una pastelería dedicada a preparar tortas y postres
+                deliciosos para compartir en momentos especiales.
+            </p>
+
+            <img src="img/torta.jpg" alt="Torta de chocolate">
+        </section>
+
+
+        <!-- PRODUCTOS -->
+        <section id="productos">
+            <h2>Nuestros Productos</h2>
+
+            <div class="productos-container">
+
+                <article class="producto">
+                    <img src="Imagenes del sitio/Torta Oreo.jpg" alt="Torta Oreo">
+                    <h3>Torta Oreo</h3>
+                    <p>Deliciosa torta Oreo de 18 cm.</p>
+                </article>
+
+                <article class="producto">
+                    <img src="Imagenes del sitio/chocotorta.jpg" alt="Chocotorta">
+                    <h3>Chocotorta</h3>
+                    <p>Clásica chocotorta cremosa y deliciosa.</p>
+                </article>
+
+                <article class="producto">
+                    <img src="Imagenes del sitio/tiramisu.jpg" alt="Tiramisú">
+                    <h3>Tiramisú</h3>
+                    <p>Postre italiano con café y crema.</p>
+                </article>
+
+                <article class="producto">
+                    <img src="Imagenes del sitio/CHEKESE FRUTILLA.jpg" alt="CHEJESE FRUTILLA">
+                    <h3>CHEJESE FURTILLA</h3>
+                    <p>TArta de frutilla.</p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- RESEÑAS -->
+        <section id="resenas">
+            <h2>Reseñas de nuestros clientes</h2>
+
+            <div class="resenas-container">
+
+                <article>
+                    <h3>María</h3>
+                    <p>
+                        "La torta estuvo increíble. Muy rica y fresca."
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Lucas</h3>
+                    <p>
+                        "Excelente atención y productos deliciosos."
+                    </p>
+                </article>
+
+                <article>
+                    <h3>Carla</h3>
+                    <p>
+                        "La chocotorta fue un éxito. ¡Volveré a comprar!"
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- MULTIMEDIA -->
+        <section id="multimedia">
+            <h2>Conocé nuestras tortas</h2>
+
+            <p>
+                Mirá algunas de nuestras preparaciones.
+            </p>
+
+            <video controls width="500">
+                <source src="video/tortas.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
+        </section>
+
+
+        <!-- CONTACTO -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+
+            <<form action="https://formspree.io/f/mrpeekpp" method="POST">
+
+                <label for="nombre">Nombre y Apellido:</label>
+                <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    required
+                >
+
+                <label for="email">Correo electrónico:</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                >
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea
+                    id="mensaje"
+                    name="mensaje"
+                    rows="5"
+                    required
+                ></textarea>
+
+                <button type="submit">Enviar mensaje</button>
+
+            </form>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Qué Torta - hecha por maxi</p>
+    </footer>
+
+</body>
+</html>
