@@ -42,7 +42,6 @@ const cartUnits = document.getElementById("cart-units");
 const cartTotal = document.getElementById("cart-total");
 const checkoutMessage = document.getElementById("checkout-message");
 
-// El carrito trabaja con el catálogo propio de Qué Torta.
 let products = localProducts;
 let cart = loadCart();
 
@@ -138,7 +137,13 @@ function renderApiProducts(apiProducts) {
     price.className = "product-price";
     price.textContent = formatPrice(product.price);
 
-    info.append(title, description, price);
+    const button = document.createElement("button");
+    button.className = "btn-main";
+    button.type = "button";
+    button.textContent = "Agregar al carrito";
+    button.addEventListener("click", () => addToCart(product.id));
+
+    info.append(title, description, price, button);
     card.append(image, info);
     apiProductsContainer.appendChild(card);
   });
@@ -159,7 +164,17 @@ async function fetchProducts() {
       throw new Error("La respuesta de la API no tiene el formato esperado.");
     }
 
-    renderApiProducts(data.products);
+    // Se guardan también en el listado general para que el carrito los encuentre y puedan comorar productos de nuestros otros locales.
+    const apiProducts = data.products.map((product) => ({
+      id: product.id,
+      title: product.title,
+      description: product.description,
+      price: product.price,
+      thumbnail: product.thumbnail
+    }));
+
+    products = [...localProducts, ...apiProducts];
+    renderApiProducts(apiProducts);
     apiStatus.textContent = "Productos de otros comercios cargados correctamente desde la API REST.";
   } catch (error) {
     console.error("No se pudieron cargar los productos de la API:", error);
@@ -288,7 +303,7 @@ document.getElementById("checkout-btn").addEventListener("click", () => {
   renderCart();
 });
 
-// Validación del formulario de contacto. Formspree procesa el envío.
+
 const contactForm = document.getElementById("contact-form");
 contactForm.addEventListener("submit", (event) => {
   const name = document.getElementById("nombre").value.trim();
@@ -311,7 +326,7 @@ contactForm.addEventListener("submit", (event) => {
   formMessage.textContent = "Enviando mensaje...";
 });
 
-// Iniciar catálogo propio, carrito y consulta a la API.
+
 renderProducts();
 renderCart();
 fetchProducts();
