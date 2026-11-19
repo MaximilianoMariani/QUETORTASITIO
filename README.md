@@ -1,37 +1,31 @@
-# Qué Torta - Pastelería
+# Qué Torta - Proyecto final de E-commerce
 
-## Descripción
+Sitio web de demostración para una pastelería llamada **Qué Torta**. Permite visualizar el catálogo propio, agregar tortas al carrito, modificar cantidades, eliminar productos y simular una compra. También incluye una sección de productos de otros comercios, cargados desde una API REST.
 
-Que torta es un sitio para una panaderia que se dedica a la fabricacion y vbenta de tortas
+## Archivos
+- `index.html`: estructura semántica, navegación, catálogo, sección de otros comercios, carrito y formulario.
+- `styles.css`: estilos, Flexbox, Grid y media queries.
+- `script.js`: consumo de API REST con `fetch`, manipulación del DOM, validación y carrito con `localStorage`.
 
-## Tecnologías utilizadas
+## Tecnologías
+HTML5, CSS3, Bootstrap 5, JavaScript, Fetch API, LocalStorage y Formspree.
 
-- HTML5
-- CSS3
-- Flexbox
-- CSS Grid
-- Media Queries
-- Google Fonts
-- Formspree
+## API REST
+La sección **Productos de nuestros otros comercios** consulta `https://dummyjson.com/products?limit=8` mediante `fetch()`. La respuesta se convierte de JSON y se muestran tarjetas con imagen, nombre, descripción y precio. DummyJSON es una API de demostración y devuelve productos genéricos; no representa un catálogo real de comercios asociados.
 
-## Secciones del sitio
+El catálogo principal de Qué Torta permanece separado y utiliza los productos locales definidos en `script.js`.
 
-- Inicio
-- Productos
-- Reseñas
-- Multimedia
-- Contacto
+## Carrito
+El carrito permite agregar tortas del catálogo propio, modificar cantidades, eliminar productos y calcular el total. Los datos se guardan en `localStorage`. La compra es una simulación y no realiza cobros.
 
 ## Formulario
+El formulario está conectado a Formspree mediante el endpoint incluido en `index.html`. Verificá que el endpoint corresponda a tu cuenta.
 
-El formulario de contacto utiliza Formspree para recibir
-los mensajes enviados por los usuarios.
+## Imágenes y video
+Copiá tus imágenes a `Imagenes del sitio/` y el video a `VIDEO/tortas.mp4`. Conservá los nombres usados en el código o actualizá las rutas. Se incluyen las carpetas para que puedas colocar tus archivos.
 
-## Diseño responsive
+## Cómo ejecutar
+Abrí la carpeta con Visual Studio Code y ejecutá `index.html` usando Live Server. Se necesita conexión a internet para Google Fonts, Bootstrap, Formspree y la API.
 
-El sitio está adaptado para diferentes tamaños de pantalla
-mediante Media Queries y Flexbox/Grid.
-
-## Autor
-
-MAxi mariani
+## Publicación
+Podés subir la carpeta a Netlify o a GitHub Pages.
